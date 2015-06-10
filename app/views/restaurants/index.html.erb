@@ -11,6 +11,15 @@
     </tr>
   </thead>
   <tbody>
+    
+  <% @restaurants.each do |n| %>
+    <tr>
+      <td><%= link_to n.name, restaurant_path(n) %></td>
+      <td><%= n.website %></td>
+    </tr>
+  <% end %>
+    
+    <!-- <td> <%#= @restaurants.website %></td> -->
   <!-- show restaurants here -->
   </tbody>
 </table>
