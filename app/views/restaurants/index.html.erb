@@ -5,12 +5,18 @@
     <tr>
       <th>Name</th>
       <th>Website</th>
-<!-- beast mode 
+<!-- beast mode
       <th>Today's Hours</th>
     -->
     </tr>
   </thead>
-  <tbody>
-  <!-- show restaurants here -->
-  </tbody>
+
+  <% @restaurants.each do |restaurant| %>
+
+    <tbody>
+        <tr>
+          <td><%= restaurant.name %></td>
+        </tr>
+  <% end %>
+    </tbody>
 </table>
