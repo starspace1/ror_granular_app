@@ -8,9 +8,13 @@
 <!-- beast mode 
       <th>Today's Hours</th>
     -->
-    </tr>
-  </thead>
-  <tbody>
-  <!-- show restaurants here -->
-  </tbody>
+  </tr>
+</thead>
+<tbody>
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+      <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+    <% end %>
+  </ul>
+</tbody>
 </table>
