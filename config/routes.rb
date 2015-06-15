@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   root 'restaurants#index'
+=======
+  
+  root 'restaurants#index' 
+>>>>>>> 5c8c28d09f6f98515ea17c094e05adab314ca490
 
   resources :restaurants
   # The priority is based upon order of creation: first created -> highest priority.
