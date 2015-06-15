@@ -15,8 +15,12 @@
 
     <tbody>
         <tr>
-          <td><%= restaurant.name %></td>
+          <td><%= link_to restaurant.name, restaurant %></td>
+          <td><%= restaurant.website %></td>
         </tr>
   <% end %>
     </tbody>
 </table>
+<br>
+<br>
+<%= link_to "Add New Restaurant", new_restaurant_path %>
