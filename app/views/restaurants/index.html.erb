@@ -8,18 +8,14 @@
 <!-- beast mode 
       <th>Today's Hours</th>
     -->
-    </tr>
-  </thead>
-  <tbody>
-    
-  <% @restaurants.each do |n| %>
-    <tr>
-      <td><%= link_to n.name, restaurant_path(n) %></td>
-      <td><%= n.website %></td>
-    </tr>
-  <% end %>
-    
-    <!-- <td> <%#= @restaurants.website %></td> -->
-  <!-- show restaurants here -->
-  </tbody>
+
+  </tr>
+</thead>
+<tbody>
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+      <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+    <% end %>
+  </ul>
+</tbody>
 </table>
