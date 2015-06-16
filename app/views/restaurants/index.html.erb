@@ -1,20 +1,9 @@
 <h1>Restaurants</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Website</th>
-<!-- beast mode 
-      <th>Today's Hours</th>
-    -->
-  </tr>
-</thead>
-<tbody>
-  <ul>
-    <% @restaurants.each do |restaurant| %>
-      <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
-    <% end %>
-  </ul>
-</tbody>
-</table>
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+  <% end %>
+</ul>
+
+<p><%= link_to 'Add a new restaurant', new_restaurant_path %></p>

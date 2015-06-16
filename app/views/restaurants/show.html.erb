@@ -1,21 +1,26 @@
 <h1><%= @restaurant.name %></h1>
-
-<h2>Hours</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Day</th>
-      <th>Open</th>
-      <th>Close</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @restaurant.hours.each do |day, hours| %>
+<p>Website: <a href="http://www.<%= @restaurant.website %>"><%= @restaurant.website %></a></p>
+<% if @restaurant.hours %>
+  <h2>Hours</h2>
+  <table>
+    <thead>
       <tr>
-        <td><%= day %></td>
-        <td><%= hours["Open"] %></td>
-        <td><%= hours["Closed"] %></td>
+        <th>Day</th>
+        <th>Open</th>
+        <th>Close</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @restaurant.hours.each do |day, hours| %>
+        <tr>
+          <td><%= day %></td>
+          <td><%= hours["Open"] %></td>
+          <td><%= hours["Closed"] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<p><%= link_to 'Edit', edit_restaurant_path(@restaurant) %></p>
+<p><%= link_to 'Delete', restaurant_path(@restaurant), method: :delete %></p>
