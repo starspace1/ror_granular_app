@@ -15,8 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
-=======
-$(
+var myJS = {
   $('.notice').fadeOut(5000);
   
   $( "#new_restaurant" ).submit(function( event ) { 
@@ -38,4 +37,8 @@ $(
     }
   });
 */
-);
+    
+  });
+}
+$(myJS);
+$(document).on("page:load", myJS);
