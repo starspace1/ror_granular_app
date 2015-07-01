@@ -2,6 +2,7 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = Restaurant.all
+    @restaurant = Restaurant.new
   end
 
   def show
@@ -31,8 +32,8 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new(restaurant_params)
 
     if @restaurant.save
-      flash[:notice] = "New restaurant created."
-      redirect_to root_url
+      flash.now[:notice] = "#{@restaurant.name} has been added to the list"
+      #redirect_to root_url
     else
       render 'new'
     end

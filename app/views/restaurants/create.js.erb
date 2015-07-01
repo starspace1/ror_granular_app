@@ -1,0 +1,7 @@
+//alert("You just added a restaurant called <%= @restaurant.name %>")
+
+$('<%= j(render @restaurant) %>').appendTo('tbody');
+
+$('<p class=\"generic_flash notice\"><%= flash[:notice] %></p>').prependTo('h1');
+
+$('form input[name*=\"rest\"]').val('');
