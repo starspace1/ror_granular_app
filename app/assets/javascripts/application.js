@@ -15,7 +15,9 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function() {
+var all_ready;
+
+all_ready = function() {
 
   $('#new_restaurant').submit(function(){
 
@@ -36,4 +38,7 @@ $(document).ready(function() {
 
   $('.notice').fadeOut(5000);
 
-});
+};
+
+$(document).ready(all_ready); // When first loading or hard refresh, eval js
+$(document).on('page:load', all_ready); // When following turbolinks link, eval js
