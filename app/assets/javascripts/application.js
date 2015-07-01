@@ -14,3 +14,24 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(function() {
+  $( "#new_restaurant" ).submit(function( event ) { 
+    var invalid = false;
+    $("input[name*='restaurant']").each(function(){
+      if($(this).val() == ''){
+        invalid = true
+      }
+    });
+    if(invalid){
+      alert("form not complete");
+      event.preventDefault();
+    }
+/* or...
+    if($("input[name*='restaurant']").filter(function(){
+      return $(this).val() != ''
+    }).length){
+      //alert, etc
+    }
+  });
+*/
+});
