@@ -28,6 +28,7 @@ var myJS = function(){
     if(invalid){
       alert("form not complete");
       event.preventDefault();
+      return false // event.preventDefault didn't seem to do the job by itself
     }
 /* or...
     if($("input[name*='restaurant']").filter(function(){
