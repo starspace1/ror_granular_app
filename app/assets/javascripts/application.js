@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
-var myJS = {
+var myJS = function(){
   $('.notice').fadeOut(5000);
   
   $( "#new_restaurant" ).submit(function( event ) { 
