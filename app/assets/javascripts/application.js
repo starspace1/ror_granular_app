@@ -18,36 +18,10 @@
 var myJS = function(){
   $('.notice').fadeOut(5000);
 
-  $( "#new_restaurant" ).hide();
+  $( "#new_rest_link" ).click(function( event ) { 
+    $( "#new_rest_link" ).hide();
+  });
   
-  $( "#new_restaurant" ).submit(function( event ) { 
-    var invalid = false;
-    $("input[name*='restaurant']").each(function(){
-      if($(this).val() == ''){
-        invalid = true
-      }
-    });
-    if(invalid){
-      alert("form not complete");
-      event.preventDefault();
-      return false // event.preventDefault didn't seem to do the job by itself
-    }
-    $( "#new_restaurant" ).hide();
-/* or...
-    if($("input[name*='restaurant']").filter(function(){
-      return $(this).val() != ''
-    }).length){
-      //alert, etc
-    }
-  });
-*/
-    
-  });
-
-  $( "#new_rest" ).click(function( event ) { 
-    $( "#new_restaurant" ).show();
-  });
-
 }
 $(myJS);
 $(document).on("page:load", myJS);

@@ -16,5 +16,4 @@
   </tbody>
 </table>
 
-<p id = "new_rest">Add New Restaurant</p>
-<%= render "new" %>
+<%= link_to "Add New Restaurant", new_restaurant_path, remote: true, id: 'new_rest_link' %>
