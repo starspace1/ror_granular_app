@@ -17,6 +17,8 @@
 
 var myJS = function(){
   $('.notice').fadeOut(5000);
+
+  $( "#new_restaurant" ).hide();
   
   $( "#new_restaurant" ).submit(function( event ) { 
     var invalid = false;
@@ -30,6 +32,7 @@ var myJS = function(){
       event.preventDefault();
       return false // event.preventDefault didn't seem to do the job by itself
     }
+    $( "#new_restaurant" ).hide();
 /* or...
     if($("input[name*='restaurant']").filter(function(){
       return $(this).val() != ''
@@ -40,6 +43,11 @@ var myJS = function(){
 */
     
   });
+
+  $( "#new_rest" ).click(function( event ) { 
+    $( "#new_restaurant" ).show();
+  });
+
 }
 $(myJS);
 $(document).on("page:load", myJS);
